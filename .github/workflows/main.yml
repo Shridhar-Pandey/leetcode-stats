@@ -1,0 +1,17 @@
+name: Update LeetCode Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update README.md with LeetCode Stats
+        uses: gautamkrishnar/leetcode-stats@master
+        with:
+          leetcode_username: Shridhar-Pandey
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          stats: all
